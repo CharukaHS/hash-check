@@ -1,0 +1,14 @@
+{
+  "name": "checksum",
+  "version": "0.1.0",
+  "description": "check hash of the file",
+  "main": "index.js",
+  "author": "CharukaHS",
+  "license": "MIT",
+  "preferGlobal": true,
+  "bin": "./index.js",
+  "dependencies": {
+    "commander": "^2.19.0",
+    "inquirer": "^6.2.0"
+  }
+}
