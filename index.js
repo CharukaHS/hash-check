@@ -5,8 +5,10 @@ const path = require('path')
 const crypto = require('crypto')
 const program = require('commander')
 
+let startTime, endTime
+
 const validateInput = (filename, checksum, algorithm) => {
-  file = path.join(__dirname, filename)
+  file = path.join(process.cwd(), filename)
   if (!filename || !checksum) { return console.error('Empty Inputs!') }
   if( !fs.statSync(file).isFile() ) { return console.log(`Cannot find file ${filename}`)}
 
@@ -22,7 +24,11 @@ const validateInput = (filename, checksum, algorithm) => {
 }
 
 const createChecksum = (filename, checksum, algorithm = 'sha256') => {
-  console.log(filename, checksum, algorithm)
+  console.log(`Algorithm = ${algorithm}`)
+  console.log(`Checksum = ${checksum}`)
+  console.log(`Solving ...`)
+
+  startTime = new Date()
 
   const stream = fs.createReadStream(filename)
   const hash = crypto.createHash(algorithm)
@@ -40,8 +46,9 @@ const compareChecksums = (given, created, algo) => {
     console.log('Matching Checksums')
   } else {
     console.log(`Checksums doesn't match!`)
-    console.log(`Algorithm = ${algo}`)
   }
+  endTime = new Date()
+  console.log(`Solved in ${endTime - startTime}ms`)
 }
 
 program

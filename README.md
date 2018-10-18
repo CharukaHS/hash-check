@@ -1,4 +1,4 @@
-#Hash-Check
+#Hash Check
 >Compare given checksum with a selected file
 
 ```sh
@@ -10,8 +10,15 @@ $ checksum m <filename> <checksum> [algorithm]
 3. open cmd on that folder
 4. type `checksum m <filename> <checksum> [algorithm]`
 
+>Tip: Use a random value at checksum inputting to generate hash of the file
+
 ### Discoverd bugs
-1. Can't use outside the workfolder
+1. ~~Can't use outside the workfolder~~
+
+###Changelog
+0.1.1
+* Now works globally. Open cmd anywhere and use
+* Typos
 
 
 eg: `checksum m movie.mp4 4185cfc0d88a8cf8b7a1f780e53e072a md5`
