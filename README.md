@@ -1,4 +1,4 @@
-#Hash Check
+# Hash-Check
 >Compare given checksum with a selected file
 
 ```sh
@@ -15,7 +15,7 @@ $ checksum m <filename> <checksum> [algorithm]
 ### Discoverd bugs
 1. ~~Can't use outside the workfolder~~
 
-###Changelog
+### Changelog
 0.1.1
 * Now works globally. Open cmd anywhere and use
 * Typos
