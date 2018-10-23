@@ -23,7 +23,7 @@ const validateInput = (filename, checksum, algorithm) => {
   createChecksum(file, checksum, algorithm)
 }
 
-const createChecksum = (filename, checksum, algorithm = 'sha256') => {
+const createChecksum = (filename, checksum, algorithm = 'sha1') => {
   console.log(`Algorithm = ${algorithm}`)
   console.log(`Checksum = ${checksum}`)
   console.log(`Solving ...`)
@@ -53,7 +53,7 @@ const compareChecksums = (given, created, algo) => {
 
 program
   .version('0.1.0', '-v, --version')
-  .description('Compare checksum of a file');
+  .description(`Compare checksum of a file \n Made by CharukaHS`);
 
 program
   .command('match [filename] [checksum] [algorithm]')
