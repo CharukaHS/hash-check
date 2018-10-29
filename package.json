@@ -1,6 +1,6 @@
 {
   "name": "checksum",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "check hash of the file",
   "main": "index.js",
   "author": "CharukaHS",
@@ -8,6 +8,7 @@
   "preferGlobal": true,
   "bin": "./index.js",
   "dependencies": {
+    "chalk": "^2.4.1",
     "commander": "^2.19.0"
   }
 }
