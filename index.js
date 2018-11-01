@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const program = require('commander')
-const hash = require('./hash')
+const matchHash = require('./match-hash')
+const createHash = require('./create-hash')
 
 program
   .version('0.2.0', '-v, --version')
@@ -11,7 +12,15 @@ program
   .alias('m')
   .description('Compare the checksum with given value')
   .action((filename, checksum) => {   
-    hash(filename, checksum)    
+    matchHash(filename, checksum)    
+  })
+
+program
+  .command('create [filename] [algorithm]')
+  .alias('c')
+  .description('Create a hash for mentioned file')
+  .action((filename, algorithm) => {
+    createHash(filename, algorithm)
   })
   
 program.parse(process.argv)
